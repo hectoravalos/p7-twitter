@@ -32,7 +32,7 @@ moment.updateLocale('en', {
     }
   });
 
-// Sets the port to localhost:3000 
+// Sets the port to localhost:3000
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'));
 
@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.use(
   (req, res, next) => {
     // Calls user's home timeline
-    t.get('statuses/home_timeline', { count: 5 }, function (err, data, response) {
+    t.get('statuses/user_timeline', { count: 5 }, function (err, data, response) {
       if(err) {
         return next(err)
       }
