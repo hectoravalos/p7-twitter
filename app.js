@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 // Uses Twit to call various data about the user and their twitter experience
 app.use(
   (req, res, next) => {
-    // Calls user's home timeline
+    // Calls user's timeline
     t.get('statuses/user_timeline', { count: 5 }, function (err, data, response) {
       if(err) {
         return next(err)
